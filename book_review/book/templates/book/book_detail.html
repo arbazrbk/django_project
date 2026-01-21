@@ -11,9 +11,10 @@
       <p><strong>Genre:</strong> {{ book.genre }}</p>
       <p><strong>Average rating:</strong> {{ book.average_rating }}</p>
       <hr>
-      <p>{{ book.description }}</p>
-      <a href="{% url 'book_update' book.pk %}" class="btn btn-secondary">Edit</a>
-      <a href="{% url 'book_list' %}" class="btn btn-link">Back to list</a>
+      <p><strong>Description:</strong><br>{{ book.description }}</p>
+      <a href="{% url 'update' book.pk %}" class="btn btn-secondary">Edit</a>
+      <a href="{% url 'delete' book.pk %}" class="btn btn-danger">Delete</a>
+      <a href="{% url 'list' %}" class="btn btn-link">Back to list</a>
     </div>
   </div>
 {% endblock %}

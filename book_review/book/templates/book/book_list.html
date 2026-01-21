@@ -10,18 +10,16 @@
           <div class="card h-100">
             <div class="card-body">
               <h5 class="card-title">{{ book.title }}</h5>
-              <h6 class="card-subtitle mb-2 text-muted">{{ book.author }}</h6>
+              <h6 class="card-subtitle mb-2 text-muted"> By {{ book.author }}</h6>
               <p class="card-text">{{ book.description|truncatechars:140 }}</p>
-              <p class="mb-1"><strong>Genre:</strong> {{ book.genre }}</p>
-              <p class="mb-1"><strong>Rating:</strong> {{ book.average_rating }}</p>
-              <a href="{% url 'book_detail' book.pk %}" class="btn btn-primary btn-sm">Details</a>
-              <a href="{% url 'book_update' book.pk %}" class="btn btn-secondary btn-sm">Edit</a>
+              <a href="{% url 'detail' book.pk %}" class="btn btn-primary btn-sm">Details</a>
+              <a href="{% url 'update' book.pk %}" class="btn btn-secondary btn-sm">Edit</a>
             </div>
           </div>
         </div>
       {% endfor %}
     </div>
   {% else %}
-    <p>No books found. <a href="{% url 'book_create' %}">Add the first book</a>.</p>
+    <p>No books found. <a href="{% url 'create' %}">Add the first book</a>.</p>
   {% endif %}
 {% endblock %}

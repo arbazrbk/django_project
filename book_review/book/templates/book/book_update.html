@@ -1,12 +1,12 @@
 {% extends 'book/base.html' %}
 {% load widget_tweaks %}
-{% block title %}{{ form.instance.pk|yesno:"Edit Book,Add Book" }} - Book Review{% endblock %}
+{% block title %}Edit Book - Book Review{% endblock %}
 
 {% block content %}
   <div class="container py-4">
     <div class="row">
       <div class="col-12">
-        <h1 class="mb-4">{{ form.instance.pk|yesno:"Edit Book,Add Book" }}</h1>
+        <h1 class="mb-4">Edit Book</h1>
       </div>
     </div>
 
