@@ -1,0 +1,17 @@
+{% extends 'myapp/base.html' %}
+{% block title %}{{ student.name }}{% endblock %}
+{% block content %}
+  <h1>{{ student.name }}</h1>
+  <dl class="row">
+    <dt class="col-sm-3">Roll Number</dt>
+    <dd class="col-sm-9">{{ student.roll_no }}</dd>
+    <dt class="col-sm-3">Email</dt>
+    <dd class="col-sm-9">{{ student.email }}</dd>
+    <dt class="col-sm-3">Phone</dt>
+    <dd class="col-sm-9">{{ student.phone_number }}</dd>
+    <dt class="col-sm-3">Department</dt>
+    <dd class="col-sm-9">{{ student.department }}</dd>
+  </dl>
+  <a class="btn btn-secondary" href="{% url 'student_list' %}">Back</a>
+  <a class="btn btn-primary" href="{% url 'student_update' student.id %}">Edit</a>
+{% endblock %}
